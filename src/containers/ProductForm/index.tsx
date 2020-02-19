@@ -24,7 +24,7 @@ const ProductForm: React.FC<ProductFormProps> = props => {
 
   return (
     <Spin spinning={submitting}>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} data-testid="product-form">
         <Field
           validate={useCallback(
             composeValidators(isRequired, hasLengthBetween(3, 20))('Name'),
@@ -39,7 +39,11 @@ const ProductForm: React.FC<ProductFormProps> = props => {
                 validateStatus={meta.touched && meta.error ? 'error' : ''}
                 help={(meta.touched && meta.error) ?? ''}
               >
-                <Input {...input} disabled={meta.submitting} />
+                <Input
+                  {...input}
+                  disabled={meta.submitting}
+                  data-testid="product-form-field-name"
+                />
               </Form.Item>
             ),
             []
@@ -60,7 +64,12 @@ const ProductForm: React.FC<ProductFormProps> = props => {
                 validateStatus={meta.touched && meta.error ? 'error' : ''}
                 help={(meta.touched && meta.error) ?? ''}
               >
-                <Input {...input} type="number" disabled={meta.submitting} />
+                <Input
+                  {...input}
+                  type="number"
+                  disabled={meta.submitting}
+                  data-testid="product-form-field-price"
+                />
               </Form.Item>
             ),
             []
@@ -83,6 +92,7 @@ const ProductForm: React.FC<ProductFormProps> = props => {
                   onChange={input.onChange}
                   onBlur={input.onBlur}
                   disabled={meta.submitting}
+                  data-testid="product-form-field-origin"
                 />
               </Form.Item>
             ),

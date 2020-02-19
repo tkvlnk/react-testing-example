@@ -30,23 +30,41 @@ const ProductCard: React.FC<ProductCardProps> = props => {
 
   if (variant === 'search') {
     actions.push(
-      <Icon onClick={() => onShoppingCartClick(product)} type="shopping-cart" />
+      <Icon
+        onClick={() => onShoppingCartClick(product)}
+        type="shopping-cart"
+        data-testid="product-shopping-cart-icon"
+      />
     );
   }
 
   if (variant === 'editable') {
     actions.push(
-      <Icon onClick={() => onEditClick(product)} type="edit" />,
-      <Icon onClick={() => onDeleteClick(product)} type="delete" />
+      <Icon
+        onClick={() => onEditClick(product)}
+        data-testid="product-edit-icon"
+        type="edit"
+      />,
+      <Icon
+        onClick={() => onDeleteClick(product)}
+        data-testid="product-delete-icon"
+        type="delete"
+      />
     );
   }
 
   if (!details) {
-    actions.push(<Icon onClick={() => onLinkClick(product)} type="link" />);
+    actions.push(
+      <Icon
+        onClick={() => onLinkClick(product)}
+        type="link"
+        data-testid="product-link-icon"
+      />
+    );
   }
 
   return (
-    <Card title={product.name} actions={actions}>
+    <Card title={product.name} actions={actions} data-testid="product-card">
       <Descriptions>
         <Descriptions.Item label="Price">{product.price}</Descriptions.Item>
         <Descriptions.Item label="Origin">{product.origin}</Descriptions.Item>
