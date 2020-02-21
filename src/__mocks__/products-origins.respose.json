@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "value": "africa",
+      "displayName": "Africa"
+    },
+    {
+      "value": "asia",
+      "displayName": "Asia"
+    },
+    {
+      "value": "europe",
+      "displayName": "Europe"
+    },
+    {
+      "value": "usa",
+      "displayName": "USA"
+    }
+  ]
+}
