@@ -46,8 +46,6 @@ describe('<ProductForm />', () => {
 
     fireEvent.submit(formEl);
 
-    rr.debug();
-
     expect(handleSubmitMock).toBeCalledTimes(0);
 
     fireEvent.change(nameFieldEl, {
