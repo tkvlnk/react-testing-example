@@ -27,7 +27,7 @@
     "@types/redux-form": "^8.2.2",
     "@types/revalidate": "^1.1.2",
     "antd": "^3.26.9",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "history": "^4.10.1",
     "luxon": "^1.22.0",
     "node-sass": "^4.13.1",
